@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Cookie&display=swap');
+
+body {
+    background-color: #c1edff;
+}
+
+/* Efecto de aumento en los enlaces de navegación */
+.navbar-nav > li > a {
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-right: 20px;
+    color: #fff;
+    transition: transform 0.3s ease; /* Añadir transición para suavizar el efecto */
+}
+
+.navbar-nav > li > a:hover {
+    transform: scale(1.2); /* Aumentar el tamaño al pasar el cursor */
+}
+
+.navbar-toggler {
+    padding: .20rem .50rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.wrapper {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: #800C80;
+    clip-path: polygon(81% 0, 100% 0, 100% 50%, 100% 100%, 71% 100%);
+    transition: 1s all;
+}
+
+.navbar-brand {
+    font-family: 'Cookie', cursive; /* Aplica la fuente Cookie */
+    color: #fff;
+    margin-bottom: 1px;
+    font-size: 32px;
+}
+
+.navbar-red:hover .wrapper {
+    clip-path: polygon(81% 0, 100% 0, 100% 50%, 100% 100%, 65% 100%);
+}
+
+.navbar-brand:hover {
+    color: #17238d;
+}
+
+.navbar-red {
+    background-color: rgb(203, 18, 132);
+    color: #fff;
+}
+
+.all-show {
+    z-index: 10;
+}
+
+/* Estilos para los títulos */
+h3, h5{
+    font-family: 'Cookie', cursive; /* Aplica la fuente Cookie a todos los títulos */
+    color: #6d0069; /* Cambia el color de los títulos si lo deseas */
+    font-size: 45px;
+}
+
+h2{
+  font-family: 'Cookie', cursive; /* Aplica la fuente Cookie a todos los títulos */
+  color: #17238d; /* Cambia el color de los títulos si lo deseas */
+  font-size: 60px;
+  text-align: center;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: #800C80; /* Color de fondo morado */
+    color: #fff; /* Color del texto */
+    padding: 40px 0; /* Espaciado vertical */
+    margin-top: 60px; /* Espacio superior para separar del contenido anterior */
+}
+
+.footer h5 {
+    margin-bottom: 20px; /* Espaciado inferior para los títulos */
+}
+
+.footer ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.footer ul li {
+    margin-bottom: 10px; /* Espaciado inferior para los elementos de la lista */
+}
+
+.footer a {
+    color: #fff; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.footer a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+/* Espacio para cada columna dentro del footer */
+.footer .col-md-3 {
+    padding: 0 15px; /* Espaciado horizontal entre columnas */
+}
+
+.container {
+    padding-left: 15px; /* Espacio horizontal en el contenedor */
+    padding-right: 15px; /* Espacio horizontal en el contenedor */
+}
+
+/* Estilos para el botón de búsqueda (ícono de lupa) */
+.icono-busqueda {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  padding: 0; /* Elimina el padding */
+  margin-left: 10px; /* Espacio entre el cuadro de búsqueda y el ícono */
+  cursor: pointer; /* Cambia el cursor a puntero */
+}
+
+.icono-busqueda i {
+  color: #fff; /* Color del ícono de lupa */
+  font-size: 20px; /* Tamaño del ícono */
+}
+
+/* Añade efectos de hover para la lupa */
+.icono-busqueda:hover i {
+  color: #ccc; /* Cambia el color del ícono al pasar el cursor */
+}
