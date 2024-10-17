@@ -34,7 +34,7 @@
         <div class="col-lg-12 mb-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">hola</h5>
+                    <h5 class="card-title">Historia</h5>
                     <p class="card-text">Desde nuestros modestos comienzos en 2005, abrimos nuestra primera tienda en un pequeño local en el corazón de la ciudad, dedicándonos a ofrecer una selección cuidadosamente curada de ropa y accesorios únicos. A lo largo de los años, hemos crecido y evolucionado constantemente, expandiéndonos a múltiples ubicaciones y llevando nuestra pasión por la moda a un público más amplio.  En esos primeros días, nuestra dedicación a la calidad y a las últimas tendencias nos convirtió en un referente en el mundo de la moda local. Hoy en día, nuestra tienda en línea permite a clientes de todo el país acceder a nuestra amplia gama de productos. Nos enorgullece ofrecer moda asequible y de alta calidad, manteniendo la misma atención personalizada que nos caracterizó desde el principio. Estamos comprometidos a inspirar confianza y autoexpresión a través de la moda, brindando productos excepcionales y un servicio excepcional a nuestros clientes.</p>
                 </div>
             </div>
