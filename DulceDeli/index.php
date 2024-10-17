@@ -41,7 +41,7 @@
                     <a class="nav-link" href="about.php">Sobre nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contacto.php">Contacto</a>
+                    <a class="nav-link" href="contacto.php">Contactame</a>
                 </li>
             </ul>
             <div class="d-flex flex-column sim">
