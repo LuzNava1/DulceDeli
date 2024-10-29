@@ -10,7 +10,7 @@
        #map {
             height: 500px;
             width: 90%;
-            margin: 50px auto; /* Ajusta los márgenes */
+            margin: 50px auto; /* Ajusta los márgenes */ññ
         }
     </style>
     <link rel="stylesheet" href="css/rec.css">
@@ -52,9 +52,9 @@
         <!-- Información de contacto -->
         <div class="col-lg-4">
             <h2>Información de Contacto</h2>
-            <p><strong>Dirección:</strong> Calle Principal, Ciudad</p>
-            <p><strong>Teléfono:</strong> +123 456 789</p>
-            <p><strong>Correo Electrónico:</strong> info@mitienda.com</p>
+            <p><strong>Dirección:</strong> San Miguel Xoxtla, Revolución No. 5</p>
+            <p><strong>Teléfono:</strong> 2228153801 o 2211480568</p>
+            <p><strong>Correo Electrónico:</strong> dulcedelireposteriacasera@gmail.com</p>
         </div>
     </div>
 </div>
@@ -69,7 +69,7 @@
 <?php include('pie.php'); ?>
 <script>
     function iniciarMap() {
-        var coord = {lat:19.2049016, lng: -98.4757613};
+        var coord = {lat:19.1651883, lng: -98.3117525};
         var map = new google.maps.Map(document.getElementById('map'),{
             zoom: 15,
             center: coord

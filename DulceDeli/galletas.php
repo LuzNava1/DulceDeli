@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyería</title>
+    <title>Galletas</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+zfg4vObwxExn1RS8y8ct5S+8r4Bf4Itrs0twDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/rec.css">
@@ -15,7 +15,7 @@
 
 <div class="container">
     <!-- Aplicar la clase CSS al h2 -->
-    <h2 class="titulo-central">Productos de Joyería</h2>
+    <h2 class="titulo-central">Catálogo de galletas</h2>
     <div class="btn-group espacio-boton-filtro" role="group" aria-label="Filtrar por precio">
         <a href="?filtro=mas_barato" class="btn btn-primary">Más barato</a>
         <a href="?filtro=mas_caro" class="btn btn-primary">Más caro</a>
@@ -25,7 +25,7 @@
         include('inc/conexion.php');
 
         // Consulta SQL para obtener todos los productos de la tabla "joyeria"
-        $consulta = "SELECT * FROM joyeria";
+        $consulta = "SELECT * FROM galletas";
 
         // Aplicar filtro si se especifica
         if (isset($_GET['filtro'])) {
@@ -60,7 +60,7 @@
                 echo "</div>";
             }
         } else {
-            echo "<p>No hay productos de joyería disponibles en este momento.</p>";
+            echo "<p>No hay productos de galletas disponibles en este momento.</p>";
         }
         ?>
     </div>

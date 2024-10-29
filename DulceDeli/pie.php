@@ -5,8 +5,8 @@
             <div class="col-md-3">
                 <h4><i class="fas fa-phone"></i> Contacto</h4>
                 <ul>
-                    <li><i class="fas fa-phone"></i> Teléfono: 123-456-789</li>
-                    <li><i class="fas fa-envelope"></i> Correo electrónico: info@example.com</li>
+                    <li><i class="fas fa-phone"></i> Teléfono: 22-28-15-38-01 </li>
+                    <li><i class="fas fa-envelope"></i> Correo electrónico: dulcedelireposteriacasera@gmail.com</li>
                     <!-- Agrega más información de contacto si es necesario -->
                 </ul>
             </div>

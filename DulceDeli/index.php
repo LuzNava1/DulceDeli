@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú Desplegable con Ícono</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Dulce Deli </title>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cookie&display=swap">
     <link rel="stylesheet" href="css/rec.css">
@@ -67,10 +68,10 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="" class="d-block w-100" alt="...">
+                        <img src="imagenes/cisne.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="" class="d-block w-100" alt="...">
+                        <img src="imagenes/pastel.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="" class="d-block w-100" alt="...">
