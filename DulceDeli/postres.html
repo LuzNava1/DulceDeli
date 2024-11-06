@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="contenedor"></div>
+
+    <script>
+        async function obtener() {
+            let peticion = await fetch("http://127.0.0.1:8080/bocadillos.json");
+            let respuesta = await peticion.json();
+            return respuesta;
+        }
+
+        obtener().then(elementos => {
+            const contenedor = document.getElementById("contenedor");
+
+            elementos.forEach(element => {
+                // Crear contenedor para cada elemento
+                const item = document.createElement("div");
+                item.style.marginBottom = "20px";
+
+                // Crear título del nombre
+                const nombre = document.createElement("h3");
+                nombre.textContent = element.nombre;
+
+                // Crear imagen
+                const imagen = document.createElement("img");
+                imagen.src = element.imagen;
+                imagen.alt = element.nombre;
+                imagen.style.width = "200px"; // Ajusta el tamaño según prefieras
+
+                // Agregar nombre e imagen al contenedor del elemento
+                item.appendChild(nombre);
+                item.appendChild(imagen);
+
+                // Agregar el contenedor al contenedor principal
+                contenedor.appendChild(item);
+            });
+        }).catch(error => console.error("Error al obtener datos:", error));
+    </script>
+</body>
+
+</html>

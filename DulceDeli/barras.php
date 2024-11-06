@@ -9,7 +9,7 @@
 
     // Definir el texto y el enlace para cada página
     $pages = [
-      'Joyería' => 'joyeria.php',
+      'galletas' => 'galletas.php',
       'Dulces' => 'dulces.php',
       'Ropa' => 'ropa.php',
       'Juguetes' => 'juguetes.php',

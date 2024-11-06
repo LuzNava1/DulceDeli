@@ -3,7 +3,6 @@ const assetsToCache = [
   '/',
   'offline.html'
 ];
-
 // Instalación del Service Worker
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -14,7 +13,6 @@ self.addEventListener('install', event => {
       })
   );
 });
-
 // Activación del Service Worker
 self.addEventListener('activate', event => {
   event.waitUntil(
@@ -30,7 +28,6 @@ self.addEventListener('activate', event => {
     })
   );
 });
-
 // Manejo de peticiones
 self.addEventListener("fetch", event => {
   event.respondWith(
@@ -43,5 +40,3 @@ self.addEventListener("fetch", event => {
       })
   )
 });
-
-

@@ -134,3 +134,38 @@ h2{
 .icono-busqueda:hover i {
   color: #ccc; /* Cambia el color del ícono al pasar el cursor */
 }
+
+/* Pantalla Splash */
+.splash-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #800C80; /* Color de fondo morado */
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.splash-screen img {
+    width: 600px; /* Tamaño del logo */
+    margin-bottom: 20px;
+}
+
+.splash-screen h1 {
+    font-family: 'Cookie', cursive; /* Aplica la fuente Cookie */
+    color: #fff;
+    font-size: 45px;
+}
+
+/* Estilos para las imágenes del carrusel */
+.carousel-inner img {
+    width: 250px;
+    height: 250px;
+}
+
+

@@ -24,7 +24,7 @@
         <?php
         include('inc/conexion.php');
 
-        // Consulta SQL para obtener todos los productos de la tabla "joyeria"
+        // Consulta SQL para obtener todos los productos de la tabla "galletas"
         $consulta = "SELECT * FROM galletas";
 
         // Aplicar filtro si se especifica

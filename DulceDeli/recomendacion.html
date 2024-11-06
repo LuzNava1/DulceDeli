@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DulceDeli - Recomendaciones</title>
+    
+    <!-- Integración de estilos y fuentes externos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cookie&display=swap">
+    <link rel="stylesheet" href="css/rec.css">
+
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #fbe7c6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #d2691e;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .form-group, ul, button {
+            margin-bottom: 10px;
+        }
+
+        .navbar {
+            background-color: #ff6f61;
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        let db;
+        function abrirBD() {
+            let request = indexedDB.open("DulceDeliDB", 1);
+            request.onupgradeneeded = function(event) {
+                db = event.target.result;
+                if (!db.objectStoreNames.contains("productos")) {
+                    let objectStore = db.createObjectStore("productos", { keyPath: "id", autoIncrement: true });
+                    objectStore.createIndex("nombre", "nombre", { unique: false });
+                    objectStore.createIndex("calificacion", "calificacion", { unique: false });
+                    objectStore.createIndex("recomendacion", "recomendacion", { unique: false });
+                }
+            };
+            request.onsuccess = function(event) {
+                db = event.target.result;
+                mostrarDatos();
+            };
+            request.onerror = function(event) {
+                console.log("Error al abrir la base de datos: ", event.target.errorCode);
+            };
+        }
+        function agregarProducto() {
+            let nombre = document.getElementById("nombre").value;
+            let calificacion = parseInt(document.getElementById("calificacion").value);
+            let recomendacion = document.getElementById("recomendacion").value;
+
+            let transaction = db.transaction(["productos"], "readwrite");
+            let objectStore = transaction.objectStore("productos");
+            let request = objectStore.add({ nombre: nombre, calificacion: calificacion, recomendacion: recomendacion });
+
+            request.onsuccess = function() {
+                mostrarDatos();
+            };
+        }
+        function mostrarDatos() {
+            let objectStore = db.transaction("productos").objectStore("productos");
+            let output = document.getElementById("listaProductos");
+            output.innerHTML = "";
+
+            objectStore.openCursor().onsuccess = function(event) {
+                let cursor = event.target.result;
+                if (cursor) {
+                    output.innerHTML += `<li>Producto: ${cursor.value.nombre}, Calificación: ${cursor.value.calificacion}, Recomendación: ${cursor.value.recomendacion}
+                                         <button onclick="modificarProducto(${cursor.key})">Modificar</button>
+                                         <button onclick="eliminarProducto(${cursor.key})">Eliminar</button></li>`;
+                    cursor.continue();
+                }
+            };
+        }
+        function modificarProducto(id) {
+            let nuevoNombre = prompt("Nuevo nombre del producto:");
+            let nuevaCalificacion = parseInt(prompt("Nueva calificación del producto:"));
+            let nuevaRecomendacion = prompt("Nueva recomendación del producto:");
+
+            let transaction = db.transaction(["productos"], "readwrite");
+            let objectStore = transaction.objectStore("productos");
+            let request = objectStore.get(id);
+
+            request.onsuccess = function() {
+                let data = request.result;
+                data.nombre = nuevoNombre;
+                data.calificacion = nuevaCalificacion;
+                data.recomendacion = nuevaRecomendacion;
+
+                let updateRequest = objectStore.put(data);
+                updateRequest.onsuccess = mostrarDatos;
+            };
+        }
+
+        function eliminarProducto(id) {
+            let transaction = db.transaction(["productos"], "readwrite");
+            let objectStore = transaction.objectStore("productos");
+            let request = objectStore.delete(id);
+            request.onsuccess = mostrarDatos;
+        }
+
+        document.addEventListener("DOMContentLoaded", abrirBD);
+    </script>
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-red navbar-dark">
+        <div class="container-fluid all-show">
+            <a class="navbar-brand" href="index.php">Dulce Deli <i class="fa fa-cookie"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown">Categorías</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="galletas.php">Galletas</a>
+                            <a class="dropdown-item" href="#">----</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.php">Sobre nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="recomendacion.html">Recomendaciones</a></li>
+                </ul>
+                <form action="index.php" method="GET" class="form-inline">
+                    <input type="text" placeholder="Buscar productos..." name="q" class="form-control">
+                    <button type="submit" class="btn btn-dark icono-busqueda"><i class="fa fa-search"></i></button>
+                    <a class="nav-link" href="login.php" title="Iniciar sesión"><i class="fa fa-user"></i></a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="header">
+            <h1>DulceDeli</h1>
+            <p>Recomendaciones de productos</p>
+        </div>
+
+        <div class="form-group">
+            <label for="nombre">Nombre del producto: </label>
+            <input type="text" id="nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="calificacion">Calificación (1-5): </label>
+            <input type="number" id="calificacion" min="1" max="5">
+        </div>
+
+        <div class="form-group">
+            <label for="recomendacion">Recomendación: </label>
+            <input type="text" id="recomendacion">
+        </div>
+
+        <button onclick="agregarProducto()">Agregar producto</button>
+
+        <h2>Lista de productos</h2>
+        <ul id="listaProductos"></ul>
+    </div>
+
+    <!-- Scripts externos -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
