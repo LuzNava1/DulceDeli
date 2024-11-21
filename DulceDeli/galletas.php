@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galletas</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+zfg4vObwxExn1RS8y8ct5S+8r4Bf4Itrs0twDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cookie&display=swap">
     <link rel="stylesheet" href="css/rec.css">
-    
+    <style>
+        .card {
+            margin: 5px; /* Reducir el margen entre tarjetas */
+            max-height: 300px; /* Altura máxima de la tarjeta */
+        }
+        .card-img-top {
+            max-height: 150px; /* Altura máxima de las imágenes */
+            object-fit: cover; /* Ajustar imágenes sin deformarlas */
+        }
+    </style>
 </head>
 <body>
+
+<!-- Barra de navegación -->
 <?php include('barra.php'); ?>
 <?php include('barras.php'); ?>
 
 <div class="container">
-    <!-- Aplicar la clase CSS al h2 -->
     <h2 class="titulo-central">Catálogo de galletas</h2>
     <div class="btn-group espacio-boton-filtro" role="group" aria-label="Filtrar por precio">
         <a href="?filtro=mas_barato" class="btn btn-primary">Más barato</a>
@@ -24,10 +36,8 @@
         <?php
         include('inc/conexion.php');
 
-        // Consulta SQL para obtener todos los productos de la tabla "galletas"
-        $consulta = "SELECT * FROM galletas";
+        $consulta = "SELECT * FROM joyeria";
 
-        // Aplicar filtro si se especifica
         if (isset($_GET['filtro'])) {
             $filtro = $_GET['filtro'];
             if ($filtro == 'mas_caro') {
@@ -39,22 +49,18 @@
 
         $resultado = mysqli_query($conexion, $consulta);
 
-        // Verificar si se obtuvieron resultados
         if ($resultado && mysqli_num_rows($resultado) > 0) {
             while ($producto = mysqli_fetch_assoc($resultado)) {
-                echo "<div class='col-md-4 mb-3'>";
+                echo "<div class='col-6 col-sm-4 col-md-3 col-lg-2 mb-3'>"; // Diseño compacto y responsive
                 echo "<div class='card'>";
                 echo "<img src='$producto[imagen]' class='card-img-top img-fluid' alt='Imagen del producto'>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>$producto[nombre]</h5>";
-                
-                // Mostrar todos los campos excepto el id, el nombre y la imagen
                 foreach ($producto as $campo => $valor) {
                     if ($campo != 'id' && $campo != 'nombre' && $campo != 'imagen') {
                         echo "<p class='card-text'>$campo: $valor</p>";
                     }
                 }
-                
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
@@ -66,7 +72,10 @@
     </div>
 </div>
 <?php include('pie.php'); ?>
+
 <!-- Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-p6F0s82JFbRxkiq4omNjK1wuF7V7w6gJwTsL0sQcg/rQ21hM/6q6rt0z7TjBpGFF" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

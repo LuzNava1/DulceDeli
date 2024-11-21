@@ -3,7 +3,7 @@
 $host = "localhost";
 $usuario = "root";
 $contrasena = "";
-$base_datos = "DulceDeliOf";
+$base_datos = "DulceDeli";
 
 // Crear la conexión
 $conexion = new mysqli($host, $usuario, $contrasena, $base_datos);

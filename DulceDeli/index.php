@@ -27,6 +27,7 @@
             });
         });
     </script>
+    
     <script>
     // JavaScript para ocultar la pantalla Splash después de 3 segundos
 document.addEventListener("DOMContentLoaded", () => {
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
  </script>
 </head>
 <body>
+
      <!-- Pantalla Splash -->
 <div id="splash-screen" class="splash-screen">
     <img src="imagenes/Logo_DulceDeli.png" alt="Logo de la aplicación">
@@ -98,18 +100,21 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="carousel-item">
                         <img src="imagenes/pastel.png" class="d-block w-100" alt="...">
                     </div>
+                    <div class="carousel-item">
+                        <img src="imagenes/Galletas.png" class="d-block w-100" alt="...">
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 mt-5">
             <div class="container">
                 <h3>De temporada</h3>
-                <p>Delicioso pay de queso crema</p>
+               
                 <div class="card">
                     <img src="imagenes/pay.png" class="card-img-top" alt="Pay de queso crema">
                     <div class="card-body">
                         <h5 class="card-title">Producto con descuento</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p class="card-text">Pay de queso crema.</p>
                     </div>
                 </div>
             </div>

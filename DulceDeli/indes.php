@@ -23,7 +23,7 @@ if (isset($_GET['q'])) {
     $termino_busqueda = mysqli_real_escape_string($conexion, $termino_busqueda);
 
     // Buscar en todas las tablas "Aqui van las tablas donde quieres buscar agrega mas si es necesario"
-    $tablas = ['dulces', 'ropa', 'juguetes', 'joyeria','galletas'];
+    $tablas = ['dulces', 'juguetes', 'joyeria','galletas'];
     $resultados_totales = [];
 
     foreach ($tablas as $tabla) {

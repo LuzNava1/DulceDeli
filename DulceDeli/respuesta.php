@@ -153,7 +153,7 @@ function eliminarPregunta($pregunta_id) {
           
         </div>
   <div class="container-fluid all-show">
-    <a class="navbar-brand" href="#">Nuestra tienda <i class="fa fa-shopping-cart"></i></a>
+    <a class="navbar-brand" href="#">DulceDeli <i class="fa fa-shopping-cart"></i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

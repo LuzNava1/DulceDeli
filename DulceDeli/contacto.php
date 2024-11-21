@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tienda de Ropa y Accesorios</title>
+    <title>Contacto</title>
     <!-- Agrega el enlace a Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
        #map {
             height: 500px;
             width: 90%;
-            margin: 50px auto; /* Ajusta los márgenes */ññ
+            margin: 50px auto; /* Ajusta los márgenes */
         }
     </style>
     <link rel="stylesheet" href="css/rec.css">
