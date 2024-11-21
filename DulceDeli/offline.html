@@ -1,15 +1,209 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sin Conexión</title>
-  <!--<link rel="stylesheet" href="css/style.css">--> <!-- Agrega tu CSS aquí si es necesario -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Postres - Modo Offline</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ff9a8b, #fecfef);
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #d35400;
+            color: #f4f4f4;
+            text-align: center;
+            padding: 1.5em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            width: 100%;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header svg {
+            width: 40px;
+            height: 40px;
+            fill: #f39c12;
+        }
+
+        /* Contenedor de recetas */
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Receta */
+        .product {
+            width: 250px;
+            text-align: center;
+        }
+
+        .product img {
+            height: 200px;
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #e0e0e0 25%, #f4f4f4 50%, #e0e0e0 75%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s infinite;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .skeleton.img {
+            height: 200px;
+            width: 100%;
+        }
+
+        .skeleton.title {
+            height: 20px;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .add-btn {
+            padding: 10px 15px;
+            font-size: 1rem;
+            color: white;
+            background-color: #d35400;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .add-btn:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+
+        @keyframes skeleton-loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #d35400;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            width: 100%;
+        }
+
+        /* Diseño responsive */
+        @media (max-width: 768px) {
+            .product-container {
+                padding: 20px;
+                gap: 10px;
+            }
+
+            .product {
+                width: 100%;
+                max-width: 220px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Estás sin conexión</h1>
-  <p>No puedes acceder a esta página porque no tienes conexión a Internet.</p>
-  <a href="">Refrescar</a>
+    <header>
+        <h1>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12 2a10 10 0 110 20 10 10 0 010-20zM7 13h10v2H7v-2zm0-4h10v2H7V9z"/>
+            </svg>
+            Tienda de Postres
+        </h1>
+    </header>
+
+    <main>
+        <section class="product-container">
+            <div class="product">
+                <img src="images/choco_cake.jpeg" alt="Pastel de Chocolate">
+                <h2>Pastel de Chocolate</h2>
+                <p>Un clásico lleno de sabor, ideal para cualquier ocasión.</p>
+            </div>
+            <div class="product">
+                <img src="images/strawberry_tart.jpg" alt="Tarta de Fresas">
+                <h2>Tarta de Fresas</h2>
+                <p>Fresca, cremosa y con el toque perfecto de dulzura.</p>
+            </div>
+            <div class="product">
+                <img src="images/macarons.jpeg" alt="Macarons">
+                <h2>Macarons</h2>
+                <p>Coloridos, delicados y absolutamente deliciosos.</p>
+            </div>
+            <div class="product">
+                <img src="images/cheesecake.jpeg" alt="Cheesecake">
+                <h2>Cheesecake</h2>
+                <p>Cremoso, con una base crujiente y un toque de vainilla.</p>
+            </div>
+            <div class="product">
+                <div class="skeleton img"></div>
+                <div class="skeleton title"></div>
+                <button class="add-btn" disabled>Modo Offline</button>
+            </div>
+            <div class="product">
+                <div class="skeleton img"></div>
+                <div class="skeleton title"></div>
+                <button class="add-btn" disabled>Modo Offline</button>
+            </div>
+            <div class="product">
+              <div class="skeleton img"></div>
+              <div class="skeleton title"></div>
+              <button class="add-btn" disabled>Modo Offline</button>
+          </div>
+          <div class="product">
+            <div class="skeleton img"></div>
+            <div class="skeleton title"></div>
+            <button class="add-btn" disabled>Modo Offline</button>
+        </div>
+        <div class="product">
+          <div class="skeleton img"></div>
+          <div class="skeleton title"></div>
+          <button class="add-btn" disabled>Modo Offline</button>
+      </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Postres. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("Modo offline activo. Animación permanente.");
+        });
+    </script>
 </body>
 </html>
-
