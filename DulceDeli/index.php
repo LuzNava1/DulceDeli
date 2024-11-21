@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="card">
                     <img src="imagenes/pay.png" class="card-img-top" alt="Pay de queso crema">
                     <div class="card-body">
-                        <h5 class="card-title">Producto con descuento</h5>
+                        <h5 class="card-title">Hola </h5>
                         <p class="card-text">Pay de queso crema.</p>
                     </div>
                 </div>
