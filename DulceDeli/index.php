@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 mt-5">
+        <div class="col-lg-7 mt-4">
             <h3 style="text-align: center;">Artículos de temporada</h3>
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
