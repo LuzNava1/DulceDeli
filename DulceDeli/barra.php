@@ -38,7 +38,7 @@
                     <a class="nav-link" href="contacto.php">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="recomendacion.html">Recomendaciones</a>
+                    <a class="nav-link" href="indet.html">Sugerencias</a>
                 </li>
             </ul>
             <div class="d-flex flex-column sim">

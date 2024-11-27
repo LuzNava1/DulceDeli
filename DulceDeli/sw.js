@@ -1,7 +1,8 @@
 const CACHE_NAME = 'd-cache' + new Date().getTime();
 const assetsToCache = [
   '/',
-  'offline.html'
+  'offline.html',
+  'indet.html'
 ];
 // Instalación del Service Worker
 self.addEventListener('install', event => {
